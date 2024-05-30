@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
+    <title>Login Mega Games</title>
     <link rel="stylesheet" href="/assets/css/login.css" />
   </head>
   <body>
     <div class="box">
-      <form>
+      <form id="loginForm">
         <div class="title">
-          <h1>Login Form</h1>
+          <h1>Inicia Sesión</h1>
         </div>
         <div class="input-box">
-          <label for="text" class="label-color"> User name</label>
+          <label for="username" class="label-color">Usuario</label>
           <input
-            id="text"
-            name="text"
+            id="username"
+            name="username"
             type="text"
             placeholder="Username"
             required
           />
           <br />
-          <label for="password" class="label-color"> Password</label>
+          <label for="password" class="label-color">Contraseña</label>
           <input
             id="password"
             name="password"
@@ -33,16 +33,13 @@
           <br />
           <input type="submit" class="Login" value="Login" />
           <br />
-          <p class="link-text">Forget password ? <a href="#">Click Here</a></p>
-          <p class="link-text">
-            Dont have an account ?
-            <a href="#">Click Here</a>
+          <p class="link-text">¿Contraseña olvidada? <a href="#">Click acá</a></p>
+          <p class="link-text">¿No tienes una cuenta?<a href="#">Click acá</a>
           </p>
-          <a href="/principal.html" class="link-text mb-2" >Volver atrás</a>
+          <a href="/principal.html" class="link-text mb-2">Volver atrás</a>
         </div>
       </form>
     </div>
-
+    <script src="/assets/js/login.js"></script>
   </body>
-
 </html>
