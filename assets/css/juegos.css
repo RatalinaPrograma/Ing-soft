@@ -1,0 +1,23 @@
+.btn-primary {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.625rem 1rem;
+    gap: 8px;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  }
+  
+  .btn-primary > svg,
+  .btn-icon > svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 0;
+  }
+  
+  element.style {
+    padding-bottom: 60px;
+  }
+  
+element.style {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}

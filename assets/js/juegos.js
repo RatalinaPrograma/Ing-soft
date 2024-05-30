@@ -1,16 +1,17 @@
-// Función mejorada para generar el HTML de una tarjeta de juegos
 const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
   return `
-    <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mb-5">
+    <div class="col">
+      <div class="card">
         <img src="${img}" class="card-img-top" alt="${name}">
         <div class="card-body">
-            <h5 class="card-title">${name}</h5>
-            <p class="card-text">${descrip}</p>
-            <p class="card-text">Precio: ${precio}</p>
-            <p class="card-text">Fecha: ${fecha}</p>
-            <p class="card-text">Stock: ${stock}</p>
-            <button class="btn btn-primary comprar-btn" data-name="${name}">Ver juego</button>
+          <h5 class="card-title">${name}</h5>
+          <p class="card-text">${descrip}</p>
+          <p class="card-text">Precio: ${precio}</p>
+          <p class="card-text">${fecha}</p>
+          <p class="card-text"> ${stock}</p>
+          <a href="#" class="btn btn-primary comprar-btn" data-name="${name}">Ver juego</a>
         </div>
+      </div>
     </div>
   `;
 };
@@ -73,5 +74,3 @@ searchInput.addEventListener("input", async () => {
     console.error('Error:', error);
   }
 });
-
-

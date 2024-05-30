@@ -32,12 +32,12 @@ const renderizarDetalleJuego = (juego) => {
     <div class="card">
       <img src="${juego.img}" class="card-img-top" alt="${juego.name}">
       <div class="card-body">
-          <h5 class="card-title">${juego.name}</h5>
-          <p class="card-text">Descripción: ${juego.descrip}</p>
-          <p class="card-text">Precio: ${juego.precio}</p>
-          <p class="card-text">Fecha: ${juego.fecha}</p>
-          <p class="card-text">Stock: ${juego.stock}</p>
-          <a href="javascript:history.back()" class="btn btn-primary">Volver</a>
+        <h5 class="card-title">${juego.name}</h5>
+        <p class="card-text">Descripción: ${juego.descrip}</p>
+        <p class="card-text">Precio: ${juego.precio}</p>
+        <p class="card-text"> ${juego.stock}</p>
+        <!-- Aquí puedes agregar más detalles si es necesario -->
+        <a href="javascript:history.back()" class="btn btn-primary">Volver</a>
       </div>
     </div>
   `;
