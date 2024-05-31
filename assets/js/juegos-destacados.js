@@ -1,25 +1,26 @@
-// Función mejorada para generar el HTML de una tarjeta de juegos
 const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
     return `
-      <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12 mb-5">
+      <div class="col">
+        <div class="card">
           <img src="${img}" class="card-img-top" alt="${name}">
           <div class="card-body">
-              <h5 class="card-title">${name}</h5>
-              <p class="card-text">${descrip}</p>
-              <p class="card-text">Precio: ${precio}</p>
-              <p class="card-text">Fecha: ${fecha}</p>
-              <p class="card-text">Stock: ${stock}</p>
-              <button class="btn btn-primary comprar-btn" data-name="${name}">Ver juego</button>
-              <button class="btn btn-success agregar-btn" data-name="${name}">Agregar al carrito</button>
+            <h5 class="card-title">${name}</h5>
+            <p class="card-text">${descrip}</p>
+            <p class="card-text"> Precio: CLP$   ${precio}</p>
+            <p class="card-text"> Fecha de lanzamiento : ${fecha}</p>
+            <p class="card-text"> Stock: ${stock}</p>
+            <a href="#" class="btn btn-primary comprar-btn" data-name="${name}">Ver juego</a>
+            <a href="#" class="btn btn-primary comprar-btn" data-name="${name}" data-precio="${precio}">Agregar al carrito</a>
           </div>
+        </div>
       </div>
     `;
   };
-  
+
   // Función para obtener los juegos desde la API y renderizar las tarjetas
   const obtenerYRenderizarJuegos = async () => {
     try {
-      const response = await fetch('https://run.mocky.io/v3/9c2231bc-dc39-4cba-8af0-bc7d1f5ce123');
+      const response = await fetch('https://run.mocky.io/v3/0ab78a40-1699-4626-887f-baf8fb7fcfca');
       if (!response.ok) {
         throw new Error('La solicitud falló');
       }

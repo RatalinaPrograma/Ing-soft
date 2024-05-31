@@ -9,7 +9,8 @@ const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
           <p class="card-text"> Precio: CLP$   ${precio}</p>
           <p class="card-text"> Fecha de lanzamiento : ${fecha}</p>
           <p class="card-text"> Stock: ${stock}</p>
-          <a href="#" class="btn btn-primary comprar-btn" data-name="${name}">Ver juego</a>
+          <a href="#" class="btn btn-primary ver-btn" data-name="${name}">Ver juego</a>
+          <a href="#" class="btn btn-primary ver-btn" data-name="${name}" data-precio="${precio}">Agregar al carrito</a>
         </div>
       </div>
     </div>
@@ -44,7 +45,7 @@ const renderJuegos = (juegos) => {
   });
 
   // Agregar event listeners a los botones de comprar
-  document.querySelectorAll('.comprar-btn').forEach((button) => {
+  document.querySelectorAll('.ver-btn').forEach((button) => {
     button.addEventListener('click', (event) => {
       const juegoName = event.currentTarget.getAttribute('data-name');
       // Redireccionar al detalle del juego seleccionado
@@ -74,3 +75,5 @@ searchInput.addEventListener("input", async () => {
     console.error('Error:', error);
   }
 });
+
+
