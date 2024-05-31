@@ -16,7 +16,7 @@
   .box {
     position: relative;
     width: 370px;
-    height: 750px;
+    height: 650px;
     background: #1c1c1c;
     border-radius: 50px 5px;
     overflow: hidden;
@@ -63,8 +63,7 @@
     background: #255ea4;
     border-radius: 50px 5px;
     z-index: 10;
-    padding: 100px 30px;
-    padding-top: 100px;
+    padding-top: 60px;
     padding-right: 30px;
     padding-bottom: 100px;
     padding-left: 30px;
@@ -87,7 +86,6 @@
   
   form .input-box {
     width: 100%;
-    margin-top: 20px;
   }
   
   form .input-box input {

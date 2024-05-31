@@ -6,9 +6,9 @@ const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${descrip}</p>
-          <p class="card-text">Precio: ${precio}</p>
-          <p class="card-text">${fecha}</p>
-          <p class="card-text"> ${stock}</p>
+          <p class="card-text"> Precio: CLP$   ${precio}</p>
+          <p class="card-text"> Fecha de lanzamiento : ${fecha}</p>
+          <p class="card-text"> Stock: ${stock}</p>
           <a href="#" class="btn btn-primary comprar-btn" data-name="${name}">Ver juego</a>
         </div>
       </div>
@@ -19,7 +19,7 @@ const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
 // Función para obtener los juegos desde la API y renderizar las tarjetas
 const obtenerYRenderizarJuegos = async () => {
   try {
-    const response = await fetch('https://run.mocky.io/v3/8f3b2231-c749-4d57-8219-b781359919ae');
+    const response = await fetch('https://run.mocky.io/v3/a31ae9cd-ae1c-4385-bad9-8b8eb3d45d1a');
     if (!response.ok) {
       throw new Error('La solicitud falló');
     }
@@ -61,7 +61,7 @@ const searchInput = document.getElementById("nombre");
 searchInput.addEventListener("input", async () => {
   const searchTerm = searchInput.value.trim().toLowerCase();
   try {
-    const response = await fetch('https://run.mocky.io/v3/8f3b2231-c749-4d57-8219-b781359919ae');
+    const response = await fetch('https://run.mocky.io/v3/a31ae9cd-ae1c-4385-bad9-8b8eb3d45d1a');
     if (!response.ok) {
       throw new Error('La solicitud falló');
     }

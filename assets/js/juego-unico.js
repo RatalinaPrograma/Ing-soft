@@ -7,7 +7,7 @@ console.log('Nombre del juego:', juegoName); // Verificar el nombre del juego
 // Función para obtener los detalles del juego por su nombre
 const obtenerDetallesJuego = async (nombre) => {
   try {
-    const response = await fetch('https://run.mocky.io/v3/8f3b2231-c749-4d57-8219-b781359919ae');
+    const response = await fetch('https://run.mocky.io/v3/a31ae9cd-ae1c-4385-bad9-8b8eb3d45d1a');
     if (!response.ok) {
       throw new Error('La solicitud falló');
     }
@@ -34,7 +34,7 @@ const renderizarDetalleJuego = (juego) => {
       <div class="card-body">
         <h5 class="card-title">${juego.name}</h5>
         <p class="card-text">Descripción: ${juego.descrip}</p>
-        <p class="card-text">Precio: ${juego.precio}</p>
+        <p class="card-text">Precio: CLP$  ${juego.precio}</p>
         <p class="card-text"> ${juego.stock}</p>
         <!-- Aquí puedes agregar más detalles si es necesario -->
         <a href="javascript:history.back()" class="btn btn-primary">Volver</a>
