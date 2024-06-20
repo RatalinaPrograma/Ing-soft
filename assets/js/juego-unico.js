@@ -7,7 +7,7 @@ console.log('Nombre del juego:', juegoName); // Verificar el nombre del juego
 // Función para obtener los detalles del juego por su nombre
 const obtenerDetallesJuego = async (nombre) => {
   try {
-    const response = await fetch('https://run.mocky.io/v3/a31ae9cd-ae1c-4385-bad9-8b8eb3d45d1a');
+    const response = await fetch('https://run.mocky.io/v3/05db8014-d0ad-48f4-86aa-4f38085687ca');
     if (!response.ok) {
       throw new Error('La solicitud falló');
     }
