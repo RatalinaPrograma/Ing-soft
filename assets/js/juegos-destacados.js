@@ -18,19 +18,32 @@ const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
   };
 
   // Función para obtener los juegos desde la API y renderizar las tarjetas
+  const sanitizeJSON = (text) => {
+    // Remueve caracteres de control no permitidos en JSON
+    return text.replace(/[\u0000-\u001F\u007F-\u009F]/g, "");
+  };
+  
   const obtenerYRenderizarJuegos = async () => {
     try {
-      const response = await fetch('https://run.mocky.io/v3/461d050e-562a-46e8-99c4-adb01b604e49');
+      const response = await fetch('https://run.mocky.io/v3/9dd1834b-f1a9-4b31-b8c4-2a3c78a13f56');
       if (!response.ok) {
         throw new Error('La solicitud falló');
       }
-      const juegos = await response.json();
+      const text = await response.text(); // Obtiene el texto de la respuesta
+      const sanitizedText = sanitizeJSON(text); // Sanitiza el texto
+      let juegos;
+      try {
+        juegos = JSON.parse(sanitizedText); // Intenta parsear el JSON
+      } catch (e) {
+        throw new Error('Error al parsear el JSON: ' + e.message);
+      }
       console.log('Data de la API:', juegos); // Mostrar los datos de la API en la consola
       renderJuegos(juegos); // Llama a la función renderJuegos para mostrar las tarjetas
     } catch (error) {
       console.error('Error:', error);
     }
   };
+  
   
   // Función para renderizar las tarjetas de juegos y almacenarlas en localStorage
   const renderJuegos = (juegos) => {
@@ -49,7 +62,7 @@ const generateJuegoCard = ({ img, name, descrip, precio, fecha, stock }) => {
       button.addEventListener('click', (event) => {
         const juegoName = event.currentTarget.getAttribute('data-name');
         // Redireccionar al detalle del juego seleccionado
-        window.location.href = `juego-unico.html?name=${encodeURIComponent(juegoName)}`;
+        window.location.href = `destacados.html?name=${encodeURIComponent(juegoName)}`;
       });
     });
   
