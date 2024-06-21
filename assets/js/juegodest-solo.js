@@ -7,11 +7,14 @@ console.log('Nombre del juego:', juegoName); // Verificar el nombre del juego
 // Función para obtener los detalles del juego por su nombre
 const obtenerDetallesJuego = async (nombre) => {
   try {
-    const response = await fetch('https://run.mocky.io/v3/461d050e-562a-46e8-99c4-adb01b604e49');
+    console.log('Fetching data...');
+    const response = await fetch('https://run.mocky.io/v3/9dd1834b-f1a9-4b31-b8c4-2a3c78a13f56 ');
+    console.log('Response received');
     if (!response.ok) {
       throw new Error('La solicitud falló');
     }
     const juegos = await response.json();
+    console.log('Data parsed', juegos);
     const juego = juegos.find(juego => juego.name === nombre);
     if (!juego) {
       throw new Error('Juego no encontrado');
@@ -20,12 +23,13 @@ const obtenerDetallesJuego = async (nombre) => {
     renderizarDetalleJuego(juego);
   } catch (error) {
     console.error('Error:', error);
+    alert(`Error: ${error.message}`);
   }
 };
 
 // Función para renderizar los detalles del juego
 const renderizarDetalleJuego = (juego) => {
-  const juegoDetailContainer = document.getElementById("juegoDetailContainer");
+  const juegoDetailContainer = document.getElementById("juegoDetailContainerDestacado");
   juegoDetailContainer.innerHTML = ""; // Limpiar el contenedor
 
   const juegoHTML = `
@@ -34,9 +38,8 @@ const renderizarDetalleJuego = (juego) => {
       <div class="card-body">
         <h5 class="card-title">${juego.name}</h5>
         <p class="card-text">Descripción: ${juego.descrip}</p>
-        <p class="card-text">Precio: CLP$  ${juego.precio}</p>
-        <p class="card-text"> ${juego.stock}</p>
-        <!-- Aquí puedes agregar más detalles si es necesario -->
+        <p class="card-text">Precio: CLP$ ${juego.precio}</p>
+        <p class="card-text">Stock: ${juego.stock}</p>
         <a href="javascript:history.back()" class="btn btn-primary">Volver</a>
       </div>
     </div>
@@ -48,5 +51,10 @@ const renderizarDetalleJuego = (juego) => {
 
 // Cargar los detalles del juego al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-  obtenerDetallesJuego(juegoName);
+  if (juegoName) {
+    obtenerDetallesJuego(juegoName);
+  } else {
+    console.error('No se proporcionó el nombre del juego en la URL');
+  }
 });
+  
