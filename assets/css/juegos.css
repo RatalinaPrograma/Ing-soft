@@ -1,23 +1,66 @@
+/* Estilos generales para el contenedor y el input */
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#nombre {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Estilos para las tarjetas */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones */
 .btn-primary {
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.625rem 1rem;
-    gap: 8px;
-    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
-  }
-  
-  .btn-primary > svg,
-  .btn-icon > svg {
-    width: 20px;
-    height: 20px;
-    margin-left: 0;
-  }
-  
-  element.style {
-    padding-bottom: 60px;
-  }
-  
-element.style {
-    margin-top: 24px;
-    margin-bottom: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.625rem 1rem;
+  gap: 8px;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.d-grid {
+  display: grid;
+  gap: 10px;
+}
+
+/* Margen superior e inferior */
+.mb-3 {
+  margin-bottom: 16px !important;
+}
+
+.mt-3 {
+  margin-top: 16px !important;
 }
